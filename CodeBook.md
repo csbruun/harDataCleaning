@@ -44,14 +44,26 @@ The data consists of measurements along these features:
 * fBodyGyroMag
 * fBodyGyroJerkMag
 
-Here, the "t"" prefix indicates measurements in the time-domain, and "f" prefix indicates frequency-domain measurements obtained by FFT calculations.  "{XYZ}" indicates that a given measurement is from a spatial sensor, and has measurements in the X, Y, and Z directions.
+Here, the "t"" prefix indicates measurements in the time-domain, and "f" prefix indicates frequency-domain measurements obtained by FFT calculations.  "{XYZ}" indicates that a given measurement is from a spatial sensor, and has measurements in the X, Y, and Z directions.  The data includes the mean and standard deviation for each of these features.
+
+These measurements were taken while the subjects were engaged in a particular activity.  The observed activities were:
+* WALKING
+* WALKING_UPSTAIRS
+* WALKING_DOWNSTAIRS
+* SITTING
+* STANDING
+* LAYING
 
 
 ### Data Processing
 The "subject_*", "Y_*", and "X_*" data frames are joined together to produce a complete observation set for each entry.  Additionally, the "activity_labels" frame is used to add a column describing the activity for each observation.  Then the variable columns are filtered for only those columns containing either mean or standard deviation data for each measured feature.
 
+The data frame is then melted so that the "subjectId" and "activity" columns identify the observation, the "variable" column identifies the measured feature, and the "value" column gives the measured value.  Then the resulting data frame is aggregated to produce the mean of each "subjectId", "activity" and feature subset.  The resulting data set is output as a CSV to the file "HAR_tidy.txt"
+
 
 ### Data Columns
+The columns of the output file are "subjectId", "activity", "variable", and "mean".  "subjectId" is an integer that identifies the subject, and "activity" is a description of the activity of the subject for the given observations.  "variable" identifies the feature for the given observations, and "mean" is the mean of the "observations for the given subject, activity, and variable.
 
 
 ### Variables
+The "variable" column contains the features for each observation.
