@@ -14,10 +14,10 @@ The data loaded is from the UCI Human Activity Recognition Using Smartphones dat
 A description of the project and the data set is available here: 
 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 
-The the input data is loaded from here: 
+The input data is loaded from here: 
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
-The script was originally created using the dataset downloaded on 2014-06-21.
+The script was originally created using a version of the dataset downloaded on 2014-06-21.
 
 
 ### Output Data
